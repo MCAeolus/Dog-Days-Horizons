@@ -10,7 +10,7 @@ var world2 = load("res://World2.tscn")
 var world3 = load("res://World3.tscn")
 var world4 = load("res://World4.tscn")
 
-var current_world = 1
+var current_world = 0
 
 var points_collected = 0
 # Called when the node enters the scene tree for the first time.
@@ -19,8 +19,6 @@ func _ready():
 
 func nextWorld():
 	current_world += 1
-	if current_world > 4:
-		current_world = 0
 	match current_world:
 		1:
 			get_tree().change_scene_to(world1)

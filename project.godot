@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dog Days"
-run/main_scene="res://worlds/World1.tscn"
+run/main_scene="res://MainScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

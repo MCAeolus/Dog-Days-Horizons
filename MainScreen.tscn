@@ -1,15 +1,47 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
 
-[node name="MarginContainer" type="MarginContainer"]
-margin_right = 1024.0
-margin_bottom = 640.0
+[ext_resource path="res://art/backgrounds/start/beginScreen2.png" type="Texture" id=1]
+[ext_resource path="res://MainScreen.gd" type="Script" id=2]
+[ext_resource path="res://art/backgrounds/start/textbegin.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 256.0
+margin_bottom = 160.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 640.0
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.561357 )
+margin_left = 177.285
+margin_top = 12.8299
+margin_right = 817.285
+margin_bottom = 652.83
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_bottom = 640.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/default = SubResource( 1 )
