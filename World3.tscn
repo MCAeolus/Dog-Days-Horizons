@@ -1,0 +1,289 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://worlds/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/tiles/world3/pixel-stool.png" type="Texture" id=2]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/tiles/tilesKennelNew.png" type="Texture" id=4]
+[ext_resource path="res://Point.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/tiles/tilesworld2.png" type="Texture" id=6]
+[ext_resource path="res://art/backgrounds/world3/world3.png" type="Texture" id=7]
+[ext_resource path="res://art/tiles/world3/pixel-table.png" type="Texture" id=8]
+[ext_resource path="res://art/block/w3tile.PNG" type="Texture" id=9]
+[ext_resource path="res://Portal.gd" type="Script" id=10]
+[ext_resource path="res://art/portal/PoundDoor.png" type="Texture" id=11]
+[ext_resource path="res://art/tiles/Girl.PNG" type="Texture" id=12]
+[ext_resource path="res://worlds/WorldTracker.gd" type="Script" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "closed"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.274856 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 1442.32, 373.481, 3.99463, 15.978 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "open"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 64, 0, 48, 96 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Rect2( 140.108, 21.9646, 671.076, 950.691 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 68, 140 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 69.734, 176, 0, 90.4694, 16.6862, 11.2995, 69.3321, 11.2995, 76.9678, 4.06572, 116.352, 4.46759, 127.203, 13.7108, 152.923, 14.1127, 158.549, 112.975, 91.0335, 175.667 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 256, 128, 0, 128, 0, 96, 256, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 256, 96, 0, 96, 0, 64, 256, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 256, 32, 0, 32, 0, 0, 256, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 128, 112, 1, 112, 1, 13, 128, 13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 260, 183, 0, 183, 0, 0, 260, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=9]
+0/name = "tilesworld2.png 0"
+0/texture = ExtResource( 6 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 163, 0, 167, 176 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tilesKennelNew.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 64, 32, 256, 160 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "tilesKennelNew.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 384, 64, 256, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "tilesKennelNew.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 704, 128, 256, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "pixel-table.png 4"
+4/texture = ExtResource( 8 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "pixel-stool.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( -2, 16, 128, 112 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "pixel-table.png 6"
+6/texture = ExtResource( 8 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( -3, 75, 260, 183 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "w3tile.PNG 7"
+7/texture = ExtResource( 9 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+
+[node name="World" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 61.5166, 51.2637 )
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Portal"]
+visible = false
+scale = Vector2( 3, 3 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 48, 96 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Portal"]
+anims/closed = SubResource( 1 )
+anims/open = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Portal"]
+position = Vector2( 4492.43, 447.03 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 140.108, 21.9646, 671.076, 950.691 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2( 4486.51, 450.506 )
+shape = SubResource( 3 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 9 )
+format = 1
+tile_data = PoolIntArray( 65535, 4, 0, 131071, 4, 0, 196607, 4, 0, 131078, 1, 0, 131092, 2, 0, 131103, 1, 0, 262143, 4, 0, 196657, 0, 0, 196662, 0, 0, 327679, 4, 0, 262170, 0, 0, 393215, 4, 0, 327694, 3, 0, 327723, 3, 0, 458751, 4, 0, 524287, 4, 0, 589823, 4, 0, 524297, 6, 0, 524325, 6, 0, 655359, 4, 0, 720895, 4, 0, 655360, 7, 0, 655361, 7, 0, 655362, 7, 0, 655363, 7, 0, 655364, 7, 0, 655365, 7, 0, 655366, 7, 0, 655367, 7, 0, 655368, 7, 0, 655369, 7, 0, 655370, 7, 0, 655371, 7, 0, 655372, 7, 0, 655373, 7, 0, 655374, 7, 0, 655375, 7, 0, 655376, 7, 0, 655377, 7, 0, 655378, 7, 0, 655379, 7, 0, 655380, 7, 0, 655381, 7, 0, 655382, 7, 0, 655383, 7, 0, 655384, 7, 0, 655385, 7, 0, 655386, 7, 0, 655387, 7, 0, 655388, 7, 0, 655389, 7, 0, 655390, 7, 0, 655391, 7, 0, 655392, 7, 0, 655393, 7, 0, 655394, 7, 0, 655395, 7, 0, 655396, 7, 0, 655397, 7, 0, 655398, 7, 0, 655399, 7, 0, 655400, 7, 0, 655401, 7, 0, 655402, 7, 0, 655403, 7, 0, 655404, 7, 0, 655405, 7, 0, 655406, 7, 0, 655407, 7, 0, 655408, 7, 0, 655409, 7, 0, 655410, 7, 0, 655411, 7, 0, 655412, 7, 0, 655413, 7, 0, 655414, 7, 0, 655415, 7, 0, 655416, 7, 0, 655417, 7, 0, 655418, 7, 0, 655419, 7, 0, 655420, 7, 0, 655421, 7, 0, 655422, 7, 0, 655423, 7, 0, 655424, 7, 0, 655425, 7, 0, 655426, 7, 0, 655427, 7, 0, 655428, 7, 0, 655429, 7, 0, 655430, 7, 0, 655431, 7, 0, 655432, 7, 0, 786431, 4, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Point" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3743.99, 117.801 )
+
+[node name="Point2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1747.19, 191.282 )
+
+[node name="Point3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 509.695, 195.947 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 138.758, 556.393 )
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_Area2D_body_entered"]
